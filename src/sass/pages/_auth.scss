@@ -1,0 +1,7 @@
+.container{
+    width: 960px;
+    height: 85vh;
+    @include flex(center, center);
+    margin: 0 auto;
+    position: relative;
+}

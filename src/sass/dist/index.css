@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 13px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.btn--login, .btn--register {
+  background: #7850e4;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-top: 30px;
+}
+.btn--login:hover, .btn--register:hover {
+  background: #3e2585;
+  transition: background-color 1s;
+}
+
+.btn--register {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.btn--register.active {
+  opacity: 1;
+  pointer-events: visible;
+  transition: 0.5s;
+}
+
+.container {
+  width: 960px;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/*login*/
+.form {
+  width: calc(960px*(6/12));
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form__title {
+  color: #7850e4;
+  font-size: 3rem;
+  letter-spacing: 10px;
+}
+.form__login, .form__register {
+  margin-top: 20px;
+  width: 66.66%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+}
+.form__login__input, .form__register__input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  margin: 5px 0;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  padding: 10px;
+}
+.form__login__input.focus, .form__register__input.focus {
+  border: 1px solid #000;
+}
+.form__login__input.active label span, .form__register__input.active label span {
+  transform: scale(0.88) translateY(-15px);
+  transition: 0.3s;
+}
+.form__login__input.active labelinput, .form__register__input.active labelinput {
+  font-size: 12px;
+}
+.form__login__input label, .form__register__input label {
+  position: relative;
+  flex: 1 0 auto;
+}
+.form__login__input label span, .form__register__input label span {
+  position: absolute;
+  transform-origin: left;
+  color: #8e8e8e;
+  z-index: 1;
+  pointer-events: none;
+  top: 3px;
+}
+.form__login__input label input, .form__register__input label input {
+  width: 100%;
+  padding: 4px 4px 4px 0;
+  outline: none;
+  border: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.form__login__input.error, .form__register__input.error {
+  border: 1px solid red;
+}
+.form__login__input.error span, .form__register__input.error span {
+  color: red;
+}
+.form__login__input__showPass, .form__register__input__showPass {
+  align-self: center;
+  font-weight: bold;
+  position: relative;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.form__login__input__showPass span, .form__register__input__showPass span {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+.form__login__input__showPass.show span:first-child, .form__register__input__showPass.show span:first-child {
+  visibility: visible;
+  opacity: 1;
+}
+.form__login__input__showPass.hide span:last-child, .form__register__input__showPass.hide span:last-child {
+  visibility: visible;
+  opacity: 1;
+}
+.form__login__error, .form__register__error {
+  color: red;
+  font-size: 10px;
+  visibility: hidden;
+  padding-left: 10px;
+  height: 0;
+}
+.form__login__error.active, .form__register__error.active {
+  visibility: visible;
+  transition: 1s;
+  height: 12px;
+  transition: 0.5s;
+}
+.form__login__remember, .form__register__remember {
+  margin-top: 20px;
+}
+.form__login__remember label, .form__register__remember label {
+  font-size: 1.2rem;
+  position: relative;
+  cursor: pointer;
+}
+.form__login__remember label a, .form__register__remember label a {
+  color: #7850e4;
+  cursor: pointer;
+}
+.form__login__remember label input, .form__register__remember label input {
+  opacity: 0;
+  margin-right: 10px;
+}
+.form__login__remember label i, .form__register__remember label i {
+  position: absolute;
+  left: 0px;
+  top: 1px;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+.form__login__remember label i:before, .form__register__remember label i:before {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  visibility: hidden;
+}
+.form__login__remember label.check i, .form__register__remember label.check i {
+  color: white;
+  /*  background:#1778f2;
+    border: 1px solid #1778f2;*/
+  background: #7850e4;
+  border: 1px solid #7850e4;
+  transition: 0.3s;
+}
+.form__login__remember label.check i:before, .form__register__remember label.check i:before {
+  visibility: visible;
+}
+.form__signUp {
+  margin-top: 40px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.form__signUp a {
+  color: #7850e4;
+}
+
+/*register form*/
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 960px;
+  height: 100px;
+  margin: 0 auto;
+}
+.footer__left {
+  width: calc(960px*(5/12));
+}
+.footer__left__logo {
+  margin-bottom: 5px;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+  color: #7850e4;
+}
+.footer__left__copyright {
+  font-size: 10px;
+}
+.footer__right {
+  width: calc(960px*(7/12));
+}
+.footer__right__links {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer__right__links a {
+  display: block;
+  padding-right: 20px;
+}
+.footer__right__links a:not(:first-child) {
+  padding-left: 20px;
+}
+.footer__right__links a:not(:last-child) {
+  border-right: 0.5px solid #000;
+}
+.footer__right__links a:hover {
+  font-weight: 900;
+  transition: font-weight 0.5s;
+}
+.footer__right__social {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer__right__social a {
+  margin-right: 10px;
+}
+.footer__right__social a i {
+  font-size: 2.5rem;
+}
+.footer__right__social a:hover {
+  transform: scale(1.3);
+  transition: transform 0.5s;
+}
+.footer__right__social__facebook {
+  color: #3B5988;
+}
+.footer__right__social__instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__right__social__instagram i {
+  text-align: center;
+  font-size: 2rem !important;
+}
+.footer__right__social__twitter {
+  color: #08a0e9;
+}
