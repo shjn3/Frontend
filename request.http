@@ -1,0 +1,59 @@
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+    "username":"alex"
+}
+
+###
+
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+    "username":"alice"
+}
+
+
+###
+
+GET http://localhost:8080/api/auth
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTEwZDU5Yzc5MjI1MjMyYWNmOGM3ZjIiLCJpYXQiOjE2Mjg0OTMzMDB9.F7LmyTAnciYYtf38kjA2CuKQXRsTbzZrLPQEQz0bvrI
+
+
+###
+
+POST http://localhost:8080/api/conversation
+Content-Type: application/json
+
+{
+    "sendId":"6110d59c79225232acf8c7f2",
+    "receiveId":"6110d5af79225232acf8c7f8"
+}
+
+###
+
+GET http://localhost:8080/api/conversation/6110d5a679225232acf8c7f5
+
+
+###
+
+GET http://localhost:8080/api/conversation/find/6110d59c79225232acf8c7f2/6110d5a679225232acf8c7f5
+
+###
+
+GET http://localhost:8080/api/messenger/61122181906cce14305c423a
+###
+
+POST http://localhost:8080/api/messenger
+Content-Type: application/json
+
+{
+    "conversationId":"61122181906cce14305c423a",
+    "senderId":"6110d5af79225232acf8c7f8",
+    "text":"Hello Alice"
+}
+
+###
+
+GET http://localhost:8080/api/findfriend?userId=6110d5a679225232acf8c7f5
